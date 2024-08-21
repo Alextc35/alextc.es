@@ -32,7 +32,6 @@ header {
 
 .logo img {
     width: 60px;
-    /* Tamaño del logo */
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
@@ -214,7 +213,7 @@ footer a:hover {
     /* Ajustes en el header */
     header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding: 10px;
     }
 
@@ -255,6 +254,7 @@ footer a:hover {
     }
 
     nav ul li a {
+        display: flex;
         justify-content: center;
         padding: 10px;
         width: 100%;
@@ -302,6 +302,9 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+    span {
+        color: red;
+    }
 
     /* Ajustes adicionales para pantallas muy pequeñas */
     .logo img {
