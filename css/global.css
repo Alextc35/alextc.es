@@ -21,8 +21,9 @@ body {
 }
 
 main {
+    width: 1200px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 20px;
     /* responsive footer */
     flex-grow: 1;
