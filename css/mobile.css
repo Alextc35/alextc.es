@@ -1,0 +1,41 @@
+/* mobile.css */
+@media (max-width: 480px) {
+
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .logo img {
+        width: 40px;
+        /* Aún más pequeño en pantallas muy pequeñas */
+        height: 40px;
+    }
+
+    .logo .name {
+        font-size: 18px;
+        /* Ajusta el tamaño del texto en pantallas muy pequeñas */
+    }
+
+    nav ul li img {
+        width: 20px;
+        /* Íconos aún más pequeños */
+        height: 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 8px 15px;
+    }
+
+    section h2 {
+        font-size: 1.25em;
+    }
+
+    section p {
+        font-size: 0.9em;
+    }
+}
