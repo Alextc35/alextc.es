@@ -3,10 +3,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px 20px;
     background-color: #333;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
@@ -16,10 +21,26 @@ header {
     object-fit: cover;
     border: 2px solid #fff;
     transition: transform 0.3s ease;
+    margin-right: 15px;
 }
 
 .logo img:hover {
     transform: scale(1.1);
+}
+
+.logo .name {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    line-height: 50px;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -58,6 +79,7 @@ nav ul li img {
     height: 30px;
     margin-right: 8px;
 }
+
 
 /*  main */
 body {
