@@ -1,6 +1,27 @@
 /* mobile.css */
 @media (max-width: 480px) {
 
+    head {
+        display: block;
+        flex-direction: row;
+    }
+
+    header {
+        margin: auto;
+    }
+
+    footer {
+        width: max-content;
+    }
+
+    nav ul li a:hover {
+        background-color: initial;
+    }
+
+    #gmail:hover {
+        background-color: initial;
+    }
+
     /* Ajustes adicionales para pantallas muy pequeñas */
     .logo img {
         width: 40px;
@@ -13,8 +34,9 @@
         /* Ajusta el tamaño del texto en pantallas muy pequeñas */
     }
 
+
     nav ul li a:hover {
-        background-color: #333;
+        background-color: initial;
     }
 
     #gmail:hover {
