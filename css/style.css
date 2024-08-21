@@ -1,4 +1,20 @@
-/* header */
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -16,6 +32,7 @@ header {
 
 .logo img {
     width: 60px;
+    /* Tamaño del logo */
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
@@ -53,6 +70,7 @@ nav ul {
 nav ul li {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 nav ul li a {
@@ -78,42 +96,31 @@ nav ul li img {
     width: 30px;
     height: 30px;
     margin-right: 8px;
+    transition: transform 0.3s ease;
 }
 
-
-/*  main */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+nav ul li img:hover {
+    transform: scale(1.1);
+    /* Efecto de agrandamiento al pasar el ratón */
 }
 
-main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
+/* Hero section */
 .hero {
     background: linear-gradient(to right, #007bff, #00d4ff);
     color: white;
     text-align: center;
     padding: 60px 20px;
     border-radius: 8px;
+    margin-bottom: 40px;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: 48px;
+    font-size: 2.5em;
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 1.25em;
     margin: 10px 0;
 }
 
@@ -144,26 +151,25 @@ section {
 }
 
 section h2 {
-    font-size: 32px;
+    font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
     color: #007bff;
 }
 
 section p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 1.25em;
     text-align: center;
 }
 
-/* Diseño en columnas para las secciones */
-.columns {
+/* Diseño de proyectos */
+.projects {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.column {
+.project {
     flex: 1;
     min-width: 250px;
     background-color: #fff;
@@ -173,38 +179,165 @@ section p {
     text-align: center;
 }
 
-.column img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.column h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #007bff;
-}
-
-.column p {
-    font-size: 16px;
-    color: #666;
-}
-
-
-/* footer */
+/* Footer */
 footer {
-    background-color: #f8f9fa;
-    padding: 15px 20px;
     text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
     font-size: 14px;
-    color: #555;
+    /* Tamaño de fuente del texto del footer */
 }
 
 footer a {
-    color: #007bff;
+    color: #ffcc00;
+    /* Color del enlace */
     text-decoration: none;
+    /* Quita el subrayado */
+    font-weight: bold;
+    /* Hace el enlace un poco más prominente */
+    transition: color 0.3s ease;
+    /* Añade una transición suave */
 }
 
 footer a:hover {
+    color: #ffffff;
+    /* Cambia el color al pasar el ratón por encima */
     text-decoration: underline;
+    /* Añade subrayado solo al pasar el ratón */
+}
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+
+    /* Ajustes en el header */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        width: 50px;
+        /* Reduce el tamaño del logo en pantallas más pequeñas */
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .logo .name {
+        font-size: 20px;
+        /* Ajusta el tamaño del texto del nombre */
+        line-height: 50px;
+        /* Asegura la alineación vertical */
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+
+    nav ul li img {
+        width: 24px;
+        /* Reduce el tamaño de los íconos en pantallas más pequeñas */
+        height: 24px;
+        margin-right: 5px;
+    }
+
+    nav ul li a {
+        justify-content: center;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Ajustes en la hero section */
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 8px 20px;
+    }
+
+    /* Ajustes en secciones generales */
+    section {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    /* Ajustes en la sección de proyectos */
+    .projects {
+        flex-direction: column;
+    }
+
+    .project {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .logo img {
+        width: 40px;
+        /* Aún más pequeño en pantallas muy pequeñas */
+        height: 40px;
+    }
+
+    .logo .name {
+        font-size: 18px;
+        /* Ajusta el tamaño del texto en pantallas muy pequeñas */
+    }
+
+    nav ul li img {
+        width: 20px;
+        /* Íconos aún más pequeños */
+        height: 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 8px 15px;
+    }
+
+    section h2 {
+        font-size: 1.25em;
+    }
+
+    section p {
+        font-size: 0.9em;
+    }
 }
