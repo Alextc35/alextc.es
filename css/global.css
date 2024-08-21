@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-image: url('../img/background.jpeg');
     background-color: #f4f4f4;
     color: #333;
     /* FIXED: Contenido desbordado */
