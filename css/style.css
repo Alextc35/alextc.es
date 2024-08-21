@@ -302,9 +302,6 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
-    span {
-        color: red;
-    }
 
     /* Ajustes adicionales para pantallas muy pequeñas */
     .logo img {
