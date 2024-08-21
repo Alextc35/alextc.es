@@ -13,6 +13,14 @@
         /* Ajusta el tamaño del texto en pantallas muy pequeñas */
     }
 
+    nav ul li a:hover {
+        background-color: #333;
+    }
+
+    #gmail:hover {
+        background-color: #333;
+    }
+
     nav ul li img {
         width: 20px;
         /* Íconos aún más pequeños */

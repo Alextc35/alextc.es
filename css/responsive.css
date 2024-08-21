@@ -29,7 +29,7 @@
     /* Mostrar el span cuando el enlace está enfocado o con hover */
     nav ul li a:focus span,
     nav ul li a:hover span {
-        transform: scale(1.1);
+
         display: inline-block;
     }
 
