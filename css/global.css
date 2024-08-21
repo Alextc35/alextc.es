@@ -5,27 +5,25 @@ body {
     padding: 0;
     line-height: 1.6;
     background-image: url('../img/background.jpeg');
-
     background-repeat: no-repeat;
-    /* Evita que la imagen se repita */
     background-size: cover;
-    /* Hace que la imagen cubra todo el fondo */
     background-position: center center;
-    /* Centra la imagen en la pantalla */
     background-attachment: fixed;
-    /* Mantiene la imagen fija al hacer scroll */
     height: 100vh;
-    /* Asegura que el fondo ocupe el 100% de la altura de la ventana */
-
     background-color: #f4f4f4;
     color: #333;
     /* FIXED: Contenido desbordado */
     max-width: 100vw;
     overflow-x: hidden;
+    /* responsive footer */
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    /* responsive footer */
+    flex-grow: 1;
 }
