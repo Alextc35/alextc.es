@@ -30,8 +30,12 @@
         margin-bottom: 10px;
     }
 
+    nav ul li a:hover {
+        background-color: initial;
+    }
+
     #gmail:hover {
-        background-color: #c71610;
+        background-color: initial;
     }
 
     nav ul li img {

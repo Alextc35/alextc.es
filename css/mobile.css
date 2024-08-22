@@ -16,9 +16,7 @@
         background-color: initial;
     }
 
-    a#gmail:focus {
-        background-color: initial;
-    }
+
 
     /* Ajustes adicionales para pantallas muy pequeñas */
     .logo img {
@@ -35,14 +33,6 @@
     nav ul li a {
         width: 25px;
         height: 25px;
-    }
-
-    nav ul li a:hover {
-        background-color: initial;
-    }
-
-    #gmail:hover {
-        background-color: #333;
     }
 
     nav ul li img {
