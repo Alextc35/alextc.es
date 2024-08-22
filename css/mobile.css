@@ -16,7 +16,7 @@
         background-color: initial;
     }
 
-    #gmail:hover {
+    a#gmail:focus {
         background-color: initial;
     }
 
