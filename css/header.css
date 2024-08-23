@@ -69,7 +69,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #606060;
+    background-color: #007bff;
 }
 
 #gmail:hover {
@@ -85,4 +85,29 @@ nav ul li img {
 
 nav ul li img:hover {
     transform: scale(1.1);
+}
+
+/* Cambiar la imagen al hacer hover */
+nav ul li a#github:hover img {
+    content: url('../img/github_black.webp');
+}
+
+nav ul li a#linkedin:hover img {
+    content: url('../img/linkedin_black.webp');
+}
+
+nav ul li a#x:hover img {
+    content: url('../img/x_black.webp');
+}
+
+nav ul li a#instagram:hover img {
+    content: url('../img/instagram_black.webp');
+}
+
+nav ul li a#telegram:hover img {
+    content: url('../img/telegram_black.webp');
+}
+
+nav ul li a#gmail:hover img {
+    content: url('../img/gmail_black.webp');
 }
