@@ -63,8 +63,13 @@ section p {
     margin-bottom: 40px;
 }
 
+.about h2 {
+    margin: 0;
+    font-size: 1.75em;
+}
+
 .container_typing {
-    width: 240px;
+    width: 280px;
     animation: animacion 1.5s steps(25), transparent .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
