@@ -1,4 +1,6 @@
 /* mobile.css */
+
+/* responsive */
 @media (max-width: 827px) {
 
     header {
@@ -30,10 +32,6 @@
         margin-bottom: 10px;
     }
 
-    nav ul li a:hover {
-        background-color: initial;
-    }
-
     #github:hover img,
     #linkedin:hover img,
     #x:hover img,
@@ -41,10 +39,6 @@
     #telegram:hover img,
     #gmail:hover img {
         content: initial;
-    }
-
-    #gmail:hover {
-        background-color: initial;
     }
 
     nav ul li img {
@@ -86,8 +80,126 @@
         font-size: 1.75em;
     }
 
-    .container_typing {
-        width: 290px;
+    /* iPhone 14 Pro Max */
+    @media (max-width: 430px) {
+
+        header {
+            padding-left: 0;
+        }
+
+        nav ul li a {
+            width: 40px;
+            height: 40px;
+        }
+
+        nav ul li img {
+            width: 45px;
+            height: 45px;
+        }
+
+    }
+
+    /* iPhone XR */
+    @media (max-width: 414px) {
+
+        nav ul li a {
+            width: 35px;
+            height: 35px;
+        }
+
+        nav ul li img {
+            width: 40px;
+            height: 40px;
+        }
+
+    }
+
+    /* iPhone SE */
+    @media (max-width: 375px) {
+
+        nav ul li a {
+            width: 30px;
+            height: 30px;
+        }
+
+        nav ul li img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    /* Samsung Galaxy S8+ */
+    @media (max-width: 360px) {
+        nav ul li a {
+            width: 25px;
+            height: 25px;
+        }
+
+        nav ul li img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .hero,
+        .about {
+            margin: 0;
+            padding: 5px;
+        }
+    }
+
+    /* Apple Watch Serie 6 */
+    @media (max-width: 162px) {
+
+
+        .logo img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .logo .name {
+            font-size: 10px;
+        }
+
+        nav ul li a {
+            width: 0;
+            height: 0;
+            padding: 8px;
+            background-color: #333;
+        }
+
+        nav ul li img {
+            width: 20px;
+            height: 20px;
+        }
+
+        section {
+            width: 120px;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            padding: 0;
+        }
+
+        .hero h1 {
+            font-size: 20px;
+        }
+
+        .cta-button {
+            width: 20px;
+            height: 20px;
+            font-size: 5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .about h2 {
+            font-size: 10px;
+        }
+
+        .about p {
+            font-size: 7px;
+        }
     }
 
 }
