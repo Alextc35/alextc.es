@@ -32,15 +32,6 @@
         margin-bottom: 10px;
     }
 
-    #github:hover img,
-    #linkedin:hover img,
-    #x:hover img,
-    #instagram:hover img,
-    #telegram:hover img,
-    #gmail:hover img {
-        content: initial;
-    }
-
     nav ul li img {
         width: 30px;
         height: 30px;
