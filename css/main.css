@@ -1,3 +1,20 @@
+/* main.css */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+section p {
+    font-size: 1.25em;
+    text-align: center;
+}
+
 .hero {
     background: linear-gradient(to right, #007bff, #00d4ff);
     color: white;
@@ -37,27 +54,6 @@
     color: #fff;
 }
 
-section {
-    margin: 40px 0;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 2px solid black;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-}
-
-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #007bff;
-}
-
-section p {
-    font-size: 1.25em;
-    text-align: center;
-}
-
 .about {
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -67,12 +63,26 @@ section p {
     margin-bottom: 40px;
 }
 
-.about h2 {
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5em;
-    color: #007bff;
-    text-align: center;
-    margin-bottom: 20px;
+.container_typing {
+    width: 250px;
+    animation: animacion 1.5s steps(25), transparent .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000000;
+    border-right: 3px solid;
+    font-family: 'Inconsolata', monospace;
+}
+
+@keyframes animacion {
+    from {
+        width: 0px
+    }
+}
+
+@keyframes transparent {
+    50% {
+        border-color: transparent
+    }
 }
 
 .about p {

@@ -1,8 +1,6 @@
 /* mobile.css */
 @media (max-width: 480px) {
 
-
-
     head {
         display: block;
         flex-direction: row;
@@ -12,22 +10,13 @@
         margin: initial;
     }
 
-    nav ul li a:hover {
-        background-color: initial;
-    }
-
-
-
-    /* Ajustes adicionales para pantallas muy pequeñas */
     .logo img {
         width: 40px;
-        /* Aún más pequeño en pantallas muy pequeñas */
         height: 40px;
     }
 
     .logo .name {
         font-size: 18px;
-        /* Ajusta el tamaño del texto en pantallas muy pequeñas */
     }
 
     nav ul li a {
@@ -35,10 +24,18 @@
         height: 25px;
     }
 
+    nav ul li a:hover {
+        background-color: initial;
+    }
+
     nav ul li img {
         width: 20px;
-        /* Íconos aún más pequeños */
         height: 20px;
+    }
+
+
+    section p {
+        font-size: 0.9em;
     }
 
     .hero h1 {
@@ -53,11 +50,12 @@
         padding: 8px 15px;
     }
 
-    section h2 {
+    .about h2 {
         font-size: 1.25em;
     }
 
-    section p {
-        font-size: 0.9em;
+    .container_typing {
+        width: 210px;
     }
+
 }

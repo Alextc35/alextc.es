@@ -34,6 +34,15 @@
         background-color: initial;
     }
 
+    #github:hover img,
+    #linkedin:hover img,
+    #x:hover img,
+    #instagram:hover img,
+    #telegram:hover img,
+    #gmail:hover img {
+        content: initial;
+    }
+
     #gmail:hover {
         background-color: initial;
     }
@@ -47,6 +56,14 @@
     nav ul li a:focus span,
     nav ul li a:hover span {
         display: none;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    section p {
+        font-size: 1em;
     }
 
     .hero {
@@ -65,23 +82,8 @@
         padding: 8px 20px;
     }
 
-    section {
-        padding: 15px;
-    }
-
-    section h2 {
+    .about h2 {
         font-size: 1.5em;
     }
 
-    section p {
-        font-size: 1em;
-    }
-
-    .projects {
-        flex-direction: column;
-    }
-
-    .project {
-        margin-bottom: 20px;
-    }
 }

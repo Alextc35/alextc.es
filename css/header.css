@@ -1,4 +1,6 @@
 /* header.css */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 header {
     display: flex;
     justify-content: space-between;
@@ -11,6 +13,13 @@ header {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
     display: flex;
     align-items: center;
 }
@@ -35,13 +44,6 @@ header {
     line-height: 50px;
     color: #ffffff;
     white-space: nowrap;
-}
-
-.logo a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
 }
 
 nav ul {
@@ -72,8 +74,32 @@ nav ul li a:hover {
     background-color: #007bff;
 }
 
+#github:hover img {
+    content: url('../img/github_black.webp');
+}
+
+#linkedin:hover img {
+    content: url('../img/linkedin_black.webp');
+}
+
+#x:hover img {
+    content: url('../img/x_black.webp');
+}
+
+#instagram:hover img {
+    content: url('../img/instagram_black.webp');
+}
+
+#telegram:hover img {
+    content: url('../img/telegram_black.webp');
+}
+
 #gmail:hover {
     background-color: #c71610;
+}
+
+#gmail:hover img {
+    content: url('../img/gmail_black.webp');
 }
 
 nav ul li img {
@@ -85,29 +111,4 @@ nav ul li img {
 
 nav ul li img:hover {
     transform: scale(1.1);
-}
-
-/* Cambiar la imagen al hacer hover */
-nav ul li a#github:hover img {
-    content: url('../img/github_black.webp');
-}
-
-nav ul li a#linkedin:hover img {
-    content: url('../img/linkedin_black.webp');
-}
-
-nav ul li a#x:hover img {
-    content: url('../img/x_black.webp');
-}
-
-nav ul li a#instagram:hover img {
-    content: url('../img/instagram_black.webp');
-}
-
-nav ul li a#telegram:hover img {
-    content: url('../img/telegram_black.webp');
-}
-
-nav ul li a#gmail:hover img {
-    content: url('../img/gmail_black.webp');
 }

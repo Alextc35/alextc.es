@@ -12,10 +12,8 @@ body {
     height: 100vh;
     background-color: #f4f4f4;
     color: #333;
-    /* FIXED: Contenido desbordado */
     max-width: 100vw;
     overflow-x: hidden;
-    /* responsive footer */
     display: flex;
     flex-direction: column;
 }
@@ -25,6 +23,5 @@ main {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-    /* responsive footer */
     flex-grow: 1;
 }
