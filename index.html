@@ -2,103 +2,56 @@
 <html lang="es">
 
 <head>
-    <meta name="autor" content="Alejandro Téllez Corona">
-    <meta name="descripción" content="Mi página web personal">
-    <meta name="keywords" content="Portafolio">
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alejandro Téllez | Inicio</title>
+    <meta charset="UTF-8">
+    <title>ATC | Inicio</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/tablet.css" media="(max-width: 827px)">
-    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 480px)">
 </head>
 
 <body>
 
-    <header>
+    <main id="hero">
+        <video autoplay muted loop>
+            <source src="assets/video/background.webm" type="video/webm">
+        </video>
 
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/Spook.webp" alt="alextc35" loading="lazy">
-                <span class="name">Alejandro Téllez Corona</span>
+        <section class="title">
+            <h1>Alejandro Téllez Corona</h1>
+        </section>
+
+        <section class="menu">
+
+            <a href="webs/mi_web/mi_web.html">
+                <p class="sonido-p">Página web</p>
             </a>
-        </div>
 
-        <nav>
-            <ul>
+            <a href="">
+                <p class="sonido-p">prueba</p>
+            </a>
 
-                <li>
-                    <a id="github" href="https://github.com/Alextc35" target="_blank">
-                        <img src="img/github_white.webp" alt="" loading="lazy">
-                        <span>GitHub</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a id="linkedin" href="https://www.linkedin.com/in/alejandrotellezcorona/" target="_blank">
-                        <img src="img/linkedin_white.webp" alt="" loading="lazy">
-                        <span>LinkedIn</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a id="x" href="https://x.com/Alextc35" target="_blank">
-                        <img src="img/x_white.webp" alt="" loading="lazy">
-                        <span>Twitter</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a id="instagram" href="https://www.instagram.com/alextc35/" target="_blank">
-                        <img src="img/instagram_white.webp" alt="" loading="lazy">
-                        <span>Instagram</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a id="telegram" href="https://t.me/alextc35" target="_blank">
-                        <img src="img/telegram_white.webp" alt="" loading="lazy">
-                        <span>Telegram</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a id="gmail"
-                        href="mailto:alejandrotellezcorona@gmail.com?subject=Consulta desde tu sitio web&body=Hola, me gustaría saber más sobre...">
-                        <img src="img/gmail_white.webp" alt="" loading="lazy">
-                        <span>Correo</span>
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
-
-    </header>
-
-    <main>
-
-        <section class="hero">
-            <h1>Bienvenido a Mi Web Personal</h1>
-            <p>Desarrollador Web &amp; Diseñador UX/UI</p>
-            <a href="https://github.com/Alextc35/alextc.es" target="_blank" class="cta-button">Ver mi trabajo</a>
         </section>
 
-        <section class="about">
-            <h2 class="container_typing">¡Hola! Soy Alextc35.</h2>
-            <p>
-                Apasionado desarrollador Front-end con un enfoque en crear
-                experiencias web detalladas y únicas. Con años de exploración en tecnología y formación en SMR y DAW,
-                transformo ideas en realidades digitales mientras continúo aprendiendo y creciendo en el campo del
-                desarrollo web.
-            </p>
-        </section>
+        <audio id="sonido" src="assets/sounds/retro-select.mp3" preload="auto"></audio>
+
+        <script>
+            const parrafos = document.querySelectorAll('.sonido-p');
+            const sonido = document.getElementById('sonido');
+
+            sonido.volume = 0.1;
+
+            parrafos.forEach(parrafo => {
+                parrafo.addEventListener('mouseenter', () => {
+                    sonido.play();
+                });
+            });
+        </script>
 
     </main>
 
     <footer>
-        <p>&copy; 2024 Alejandro Téllez. Código fuente licenciado bajo la <a
-                href="https://github.com/Alextc35/portfolio/blob/main/LICENSE" target="_blank">Licencia MIT</a>.</p>
+        <p>hello footer!</p>
     </footer>
 
 </body>

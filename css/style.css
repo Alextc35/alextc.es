@@ -1,8 +1,85 @@
-/* style.css */
-@import url('global.css');
-@import url('header.css');
-@import url('main.css');
-@import url('footer.css');
+body {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    z-index: 0;
+}
 
-@import url('responsive.css');
-@import url('mobile.css');
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(1.5px);
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+#hero {
+    min-height: 100vh;
+    position: relative;
+}
+
+.title {
+    flex-direction: column;
+    padding: 5%;
+    position: relative;
+}
+
+.title h1 {
+    margin: auto;
+    font-size: 5rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    color: white;
+    gap: 20px;
+    transition: color 0.5s ease;
+}
+
+.sonido-p {
+    display: block;
+    text-align: center;
+    width: fit-content;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu p {
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.menu p:hover {
+    cursor: default;
+    color: rgba(255, 255, 255, 0.5);
+}
