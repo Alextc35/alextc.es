@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>ATC | Inicio</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
     <main id="hero">
+        <audio id="myAudio" autoplay loop>
+            <source src="./assets/music/peaceful_solitude.ogg" type="audio/ogg">
+        </audio>
+
         <video autoplay muted loop>
-            <source src="assets/video/background.webm" type="video/webm">
+            <source src="./assets/video/background.webm" type="video/webm">
         </video>
 
         <section class="title">
@@ -23,22 +27,24 @@
 
         <section class="menu">
 
-            <a href="webs/mi_web/mi_web.html">
+            <a href="./webs/mi_web/mi_web.html">
                 <p class="sonido-p">Página web</p>
             </a>
 
-            <a href="">
+            <a href="./webs/prueba/prueba.html">
                 <p class="sonido-p">prueba</p>
             </a>
 
         </section>
 
-        <audio id="sonido" src="assets/sounds/retro-select.mp3" preload="auto"></audio>
+        <audio id="sonido" src="./assets/sounds/retro-select.mp3" preload="auto"></audio>
 
         <script>
             const parrafos = document.querySelectorAll('.sonido-p');
             const sonido = document.getElementById('sonido');
+            const audioElement = document.getElementById('myAudio');
 
+            audioElement.volume = 0.25;
             sonido.volume = 0.1;
 
             parrafos.forEach(parrafo => {
