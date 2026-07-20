@@ -1,0 +1,26 @@
+body {
+	background: linear-gradient(135deg, #0f172a 0%, #1e2937 50%, #312e81 100%);
+	font-family: 'Inter', system-ui, sans-serif;
+}
+
+.link-card {
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-card:hover {
+	transform: translateY(-8px) scale(1.03);
+	box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+.avatar {
+	transition: all 0.5s ease;
+}
+
+.avatar:hover {
+	transform: scale(1.08) rotate(5deg);
+	box-shadow: 0 0 30px rgba(103, 232, 249, 0.5);
+}
+
+.glow-text {
+	text-shadow: 0 0 20px rgb(103 232 249);
+}
