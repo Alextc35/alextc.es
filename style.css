@@ -11,6 +11,8 @@
   --quiet: #827767;
   --gold: #d8b76a;
   --gold-bright: #f1d994;
+  --teal: #7adfd0;
+  --clay: #f0a77a;
   --shadow: rgba(0, 0, 0, 0.48);
   --radius: 8px;
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -358,6 +360,259 @@ h1 {
 @media (min-width: 760px) {
   .profile-card {
     transform: translateY(-1vh);
+  }
+}
+
+@media (orientation: landscape) and (max-width: 940px) and (max-height: 540px) {
+  html {
+    min-height: 100dvh;
+  }
+
+  body {
+    min-height: 100dvh;
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(21, 96, 86, 0.24), transparent 46%),
+      linear-gradient(180deg, rgba(240, 167, 122, 0.13), transparent 52%),
+      linear-gradient(135deg, #050706 0%, #111b18 54%, #050607 100%);
+  }
+
+  body::before {
+    background-size: 42px 42px;
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.82), transparent 92%);
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.82), transparent 92%);
+  }
+
+  body::after {
+    inset: 0;
+    height: auto;
+    background:
+      linear-gradient(90deg, rgba(241, 217, 148, 0.14), transparent 28%),
+      linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.52));
+  }
+
+  .page-shell {
+    min-height: 100dvh;
+    padding:
+      max(10px, env(safe-area-inset-top))
+      max(14px, env(safe-area-inset-right))
+      max(10px, env(safe-area-inset-bottom))
+      max(14px, env(safe-area-inset-left));
+    place-items: center;
+  }
+
+  .profile-card {
+    --landscape-left-col: max(190px, 34vw);
+    --landscape-gap-x: clamp(18px, 3.4vw, 28px);
+    --landscape-gap-half: clamp(9px, 1.7vw, 14px);
+    --landscape-pad-x: clamp(16px, 3.3vw, 24px);
+
+    display: grid;
+    grid-template-areas:
+      "mark links"
+      "head links"
+      "intro links"
+      "foot links";
+    grid-template-rows: auto minmax(0, auto) minmax(0, 1fr) auto;
+    grid-template-columns: minmax(190px, 34vw) minmax(0, 1fr);
+    gap: 10px var(--landscape-gap-x);
+    width: min(100%, 900px);
+    max-height: calc(100dvh - max(20px, env(safe-area-inset-top) + env(safe-area-inset-bottom)));
+    padding: clamp(14px, 4.2vh, 20px) var(--landscape-pad-x);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.014)),
+      rgba(11, 16, 14, 0.88);
+  }
+
+  .profile-card::before {
+    background:
+      linear-gradient(120deg, rgba(122, 223, 208, 0.16), transparent 25%),
+      linear-gradient(300deg, rgba(240, 167, 122, 0.13), transparent 30%),
+      linear-gradient(135deg, rgba(241, 217, 148, 0.11), transparent 52%);
+  }
+
+  .profile-card::after {
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: -1;
+    width: calc(var(--landscape-pad-x) + var(--landscape-left-col) + var(--landscape-gap-half));
+    content: "";
+    background:
+      linear-gradient(90deg, rgba(122, 223, 208, 0.16), transparent 72%),
+      repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 9px);
+    border-right: 1px solid rgba(241, 217, 148, 0.16);
+    pointer-events: none;
+  }
+
+  .brand-mark {
+    grid-area: mark;
+    justify-self: start;
+    height: 1.8rem;
+    min-width: 3rem;
+    margin-bottom: 0;
+    background: rgba(6, 8, 7, 0.36);
+  }
+
+  .profile-header {
+    grid-area: head;
+    grid-template-columns: clamp(66px, 18vh, 88px) minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .portrait-frame {
+    width: clamp(66px, 18vh, 88px);
+  }
+
+  .eyebrow {
+    margin-bottom: 5px;
+    color: #cec5b3;
+    font-size: 0.64rem;
+    line-height: 1.15;
+  }
+
+  h1 {
+    font-size: clamp(1.55rem, 7vh, 2.32rem);
+    line-height: 0.96;
+  }
+
+  .subtitle {
+    margin-top: 7px;
+    font-size: clamp(0.78rem, 2.6vh, 0.94rem);
+    line-height: 1.25;
+  }
+
+  .intro {
+    display: -webkit-box;
+    grid-area: intro;
+    align-self: center;
+    margin: 0;
+    overflow: hidden;
+    color: #d4c8b5;
+    font-size: clamp(0.78rem, 2.45vh, 0.92rem);
+    line-height: 1.45;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .links {
+    grid-area: links;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: center;
+    gap: 9px;
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .link-card {
+    position: relative;
+    grid-template-columns: 38px minmax(0, 1fr) 28px;
+    gap: 9px;
+    min-height: clamp(54px, 16.5vh, 68px);
+    padding: 9px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.052);
+  }
+
+  .link-card::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 2px;
+    content: "";
+    background: linear-gradient(90deg, var(--teal), var(--gold-bright), var(--clay));
+    opacity: 0.52;
+    pointer-events: none;
+  }
+
+  .link-card.featured {
+    grid-column: 1 / -1;
+    background:
+      linear-gradient(135deg, rgba(216, 183, 106, 0.2), rgba(122, 223, 208, 0.08)),
+      var(--panel-strong);
+  }
+
+  .link-card[href^="mailto:"] {
+    grid-column: 1 / -1;
+  }
+
+  .link-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 0.92rem;
+  }
+
+  .link-title {
+    font-size: clamp(0.84rem, 2.5vh, 0.95rem);
+  }
+
+  .link-note {
+    font-size: clamp(0.72rem, 2.15vh, 0.8rem);
+  }
+
+  .link-action {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer {
+    grid-area: foot;
+    justify-content: flex-start;
+    margin-top: 0;
+    font-size: 0.7rem;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 760px) and (max-height: 360px) {
+  .profile-card {
+    --landscape-left-col: max(168px, 32vw);
+    --landscape-gap-x: 14px;
+    --landscape-gap-half: 7px;
+    --landscape-pad-x: 14px;
+
+    grid-template-columns: minmax(168px, 32vw) minmax(0, 1fr);
+    gap: 8px var(--landscape-gap-x);
+    padding: 12px var(--landscape-pad-x);
+  }
+
+  .profile-header {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .portrait-frame {
+    width: 58px;
+  }
+
+  h1 {
+    font-size: clamp(1.34rem, 6.4vh, 1.58rem);
+  }
+
+  .subtitle {
+    margin-top: 5px;
+  }
+
+  .intro {
+    -webkit-line-clamp: 2;
+  }
+
+  .links {
+    gap: 7px;
+  }
+
+  .link-card {
+    grid-template-columns: 34px minmax(0, 1fr) 26px;
+    min-height: 50px;
+    padding: 7px;
+  }
+
+  .link-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .link-action {
+    width: 26px;
+    height: 26px;
   }
 }
 
