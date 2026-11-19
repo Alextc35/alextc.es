@@ -59,11 +59,12 @@ src/
   data/              Perfil, proyectos, trayectoria y textos
   styles/            Estilos y adaptación de pantalla
   views/             Vistas del portfolio
+assets/brand/        Fuente gráfica del favicon
 public/
   images/            Fotografías, logos y capturas de proyectos
   licenses/          Licencias de las fuentes
 build/               Generación de metadatos y contenido sin JavaScript
-scripts/             Validación del build y generación de la imagen social
+scripts/             Validación del build y generación de iconos e imagen social
 tests/               Pruebas de navegador
 ```
 

@@ -117,8 +117,8 @@ test('the supplied avatar resolves as browser and Apple icons at their declared 
         }),
       ),
     )
-  expect(icons).toHaveLength(3)
-  for (const [index, size] of [32, 48, 180].entries()) {
+  expect(icons).toHaveLength(4)
+  for (const [index, size] of [16, 32, 48, 180].entries()) {
     expect(icons[index].width).toBe(size)
     expect(icons[index].height).toBe(size)
     expect(icons[index].size).toBe(`${size}x${size}`)

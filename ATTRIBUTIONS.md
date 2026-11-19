@@ -11,6 +11,8 @@ Ambas familias se distribuyen localmente mediante Fontsource.
 
 El retrato y el avatar de la identidad del portfolio pertenecen a Alejandro Téllez Corona.
 
+El favicon utiliza una variante del avatar con el rostro ampliado para tamaños pequeños. Su fuente gráfica está en `assets/brand/favicon-avatar.png` y sus versiones de 16, 32 y 48 píxeles se generan con `scripts/create-favicons.ps1`.
+
 - **Tajamar:** [logo SVG oficial](https://www.tajamar.es/wp-content/uploads/2017/06/logo-tajamar.svg). `tajamar-logo.svg` conserva el logo completo y `tajamar-mark.svg` utiliza los trazos originales de su monograma.
 - **IES Luis Braille:** `luis-braille-mark.svg` es una recreación vectorial del monograma basada en el [logo del directorio de EducaMadrid](https://www.educa2.madrid.org/web/educamadrid/principal/files/2ea697ac-456c-47ce-9f04-925665d5f295/Luis%20Braille.png?largeSize=true).
 - **Sánchez Angulo:** [logo de su web oficial](https://sanchezangulo.es/wp-content/uploads/2025/09/logo-1.png).
