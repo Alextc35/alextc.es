@@ -1,0 +1,110 @@
+.image-viewer-trigger {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  line-height: 0;
+}
+
+.image-viewer-trigger:focus-visible {
+  outline: 2px solid #bfd5a4;
+  outline-offset: 3px;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: max(76px, calc(env(safe-area-inset-top) + 60px)) max(16px, env(safe-area-inset-right))
+    max(20px, calc(env(safe-area-inset-bottom) + 12px)) max(16px, env(safe-area-inset-left));
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: #edeee6;
+  touch-action: auto;
+}
+
+.image-viewer[open] {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 14px;
+}
+
+.image-viewer::backdrop {
+  background: #161815f2;
+}
+
+.image-viewer-close {
+  position: absolute;
+  top: max(16px, calc(env(safe-area-inset-top) + 12px));
+  right: max(16px, calc(env(safe-area-inset-right) + 12px));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #bfd5a4;
+  border-radius: 50%;
+  background: #161815;
+  color: #bfd5a4;
+}
+
+.image-viewer-close:hover {
+  background: #bfd5a4;
+  color: #161815;
+}
+.image-viewer-close:focus-visible {
+  outline: 2px solid #bfd5a4;
+  outline-offset: 4px;
+}
+
+.image-viewer-image {
+  display: block;
+  align-self: center;
+  justify-self: center;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  touch-action: auto;
+}
+
+.image-viewer-hint {
+  margin: 0;
+  color: #bfd5a4;
+  font: 11px/1.5 var(--mono, monospace);
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Landscape uses the whole available viewport; controls float over the image. */
+@media (orientation: landscape) and (max-height: 600px) {
+  .image-viewer {
+    padding: calc(env(safe-area-inset-top) + 8px) calc(env(safe-area-inset-right) + 8px)
+      calc(env(safe-area-inset-bottom) + 8px) calc(env(safe-area-inset-left) + 8px);
+  }
+  .image-viewer[open] {
+    grid-template-rows: minmax(0, 1fr);
+    gap: 0;
+  }
+  .image-viewer-close {
+    top: calc(env(safe-area-inset-top) + 8px);
+    right: calc(env(safe-area-inset-right) + 8px);
+    z-index: 2;
+  }
+  .image-viewer-hint {
+    display: none;
+  }
+}

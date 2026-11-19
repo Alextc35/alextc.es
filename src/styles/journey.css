@@ -1,0 +1,408 @@
+.journey-view.journey-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: stretch;
+  align-content: stretch;
+  gap: 20px;
+  padding: 20px 0 8px;
+  width: 100%;
+  max-width: 920px;
+  margin-inline: auto;
+}
+.journey-profile .journey-label {
+  font: 11px/1.5 var(--mono);
+  letter-spacing: 0.11em;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.journey-profile .segment-tabs {
+  gap: 30px;
+}
+.journey-profile .segment-tabs button {
+  font-size: 15px;
+  padding: 0 0 12px;
+}
+.journey-profile .journey-profile-panel {
+  min-height: 0;
+}
+.journey-profile .journey-list {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+.journey-profile .journey-card {
+  position: relative;
+  min-height: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+/* Let touch gestures and text selection reach the row; the button also exposes
+   the same action to keyboard and assistive technology. */
+.journey-card-trigger {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: none;
+}
+.journey-card-trigger:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: -2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .journey-card:hover .organization-name {
+    color: var(--color-sage);
+  }
+}
+.journey-profile .journey-card:last-child {
+  border-bottom: 0;
+}
+.journey-profile .journey-identity {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.journey-profile .organization-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #bfd5a408;
+  color: var(--color-sage);
+}
+.journey-profile .organization-avatar.has-logo {
+  background: var(--color-paper);
+  border-color: transparent;
+  padding: 8px;
+}
+.journey-profile .organization-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.journey-profile .organization-avatar > svg {
+  width: 26px;
+  height: 26px;
+}
+.journey-profile .organization-avatar.has-logo.is-wordmark {
+  padding: 3px;
+}
+.journey-profile .journey-credentials {
+  min-width: 0;
+}
+.journey-profile .organization-name {
+  font: 600 19px/1.4 var(--font-sans);
+  letter-spacing: -0.025em;
+}
+.journey-profile .qualification-title {
+  font-size: 17px;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+.journey-profile .qualification-kind {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 4px;
+  color: var(--muted);
+}
+.journey-profile .qualification-period {
+  font: 11px/1.4 var(--mono);
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+  .journey-view.journey-profile {
+    padding-top: 16px;
+    gap: 16px;
+  }
+  .journey-profile .journey-label {
+    font-size: 10px;
+    margin-bottom: 16px;
+  }
+  .journey-profile .segment-tabs {
+    gap: 28px;
+  }
+  .journey-profile .segment-tabs button {
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+  .journey-profile .journey-card {
+    padding: 14px 0;
+  }
+  .journey-profile .journey-identity {
+    gap: 12px;
+  }
+  .journey-profile .organization-avatar {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+    padding: 6px;
+  }
+  .journey-profile .organization-avatar.has-logo {
+    padding: 6px;
+  }
+  .journey-profile .organization-name {
+    font-size: 16px;
+  }
+  .journey-profile .qualification-title {
+    font-size: 15px;
+  }
+  .journey-profile .qualification-kind {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+  .journey-profile .qualification-period {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+}
+@media (max-width: 600px) and (max-height: 650px) {
+  .journey-view.journey-profile {
+    padding-top: 8px;
+    gap: 12px;
+  }
+  .journey-profile .journey-label {
+    margin-bottom: 12px;
+  }
+  .journey-profile .journey-card {
+    padding: 8px 0;
+  }
+  .journey-profile .organization-avatar {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+  .journey-profile .organization-name {
+    font-size: 14px;
+  }
+  .journey-profile .qualification-title {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+  .journey-profile .qualification-period {
+    margin-top: 4px;
+  }
+}
+
+/* Reclaim the section-heading row before reducing any qualification text. */
+@media (max-width: 600px) and (max-height: 580px) {
+  .journey-view.journey-profile {
+    padding: 4px 0;
+    gap: 8px;
+  }
+  .journey-profile .journey-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .journey-profile .journey-label {
+    margin: 0;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .journey-profile .segment-tabs {
+    gap: 16px;
+  }
+  .journey-profile .segment-tabs button {
+    font-size: 12px;
+    padding: 0 0 6px;
+  }
+  .journey-profile .journey-card {
+    padding: 6px 0;
+  }
+}
+
+/* Three columns use landscape width without hiding any entry. */
+@media (min-width: 601px) and (max-height: 620px) {
+  .journey-view.journey-profile {
+    padding-top: 8px;
+    gap: 16px;
+  }
+  .journey-profile .journey-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .journey-profile .journey-label {
+    margin: 0;
+    font-size: 10px;
+  }
+  .journey-profile .segment-tabs {
+    gap: 26px;
+  }
+  .journey-profile .segment-tabs button {
+    font-size: 14px;
+    padding: 6px 0 10px;
+  }
+  .journey-profile .journey-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    column-gap: 22px;
+  }
+  .journey-profile .journey-card {
+    padding: 16px 0 0;
+    border-bottom: 0;
+  }
+  .journey-profile .journey-card + .journey-card {
+    border-left: 1px solid var(--line);
+    padding-left: 22px;
+  }
+  .journey-profile .journey-identity {
+    gap: 10px;
+  }
+  .journey-profile .organization-avatar {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+  .journey-profile .organization-avatar.has-logo {
+    padding: 5px;
+  }
+  .journey-profile .organization-name {
+    font-size: 16px;
+  }
+  .journey-profile .qualification-title {
+    font-size: 14px;
+  }
+  .journey-profile .qualification-kind {
+    font-size: 11px;
+  }
+  .journey-profile .qualification-period {
+    font-size: 10px;
+  }
+}
+
+/* An inline heading leaves room for three rows in very short phone viewports. */
+@media (max-width: 600px) and (max-height: 359px) {
+  .journey-view.journey-profile {
+    padding: 4px 0;
+    gap: 8px;
+  }
+  .journey-profile .journey-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .journey-profile .journey-label {
+    font-size: 9px;
+    letter-spacing: 0.04em;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .journey-profile .segment-tabs {
+    gap: 16px;
+  }
+  .journey-profile .segment-tabs button {
+    font-size: 12px;
+    padding: 0 0 6px;
+  }
+  .journey-profile .journey-card {
+    padding: 4px 0;
+  }
+  .journey-profile .journey-identity {
+    gap: 10px;
+  }
+  .journey-profile .organization-avatar {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+    border-radius: 4px;
+  }
+  .journey-profile .organization-avatar.has-logo {
+    padding: 3px;
+  }
+  .journey-profile .organization-avatar > svg {
+    width: 18px;
+    height: 18px;
+  }
+  .journey-profile .journey-credentials {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 8px;
+    width: 100%;
+    align-items: baseline;
+  }
+  .journey-profile .organization-name {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .journey-profile .qualification-period {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 9px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .journey-profile .qualification-title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+  .journey-profile .qualification-kind {
+    display: none;
+  }
+}
+@media (min-width: 601px) and (max-height: 359px) {
+  .journey-view.journey-profile {
+    padding: 4px 0;
+    gap: 10px;
+  }
+  .journey-profile .journey-label {
+    font-size: 9px;
+  }
+  .journey-profile .segment-tabs {
+    gap: 20px;
+  }
+  .journey-profile .segment-tabs button {
+    font-size: 12px;
+    padding: 0 0 6px;
+  }
+  .journey-profile .journey-list {
+    column-gap: 16px;
+  }
+  .journey-profile .journey-card {
+    padding-top: 8px;
+  }
+  .journey-profile .journey-card + .journey-card {
+    padding-left: 16px;
+  }
+  .journey-profile .journey-identity {
+    gap: 8px;
+  }
+  .journey-profile .organization-avatar {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
+  }
+  .journey-profile .organization-name {
+    font-size: 14px;
+  }
+  .journey-profile .qualification-title {
+    font-size: 12px;
+  }
+  .journey-profile .qualification-period {
+    font-size: 9px;
+  }
+  .journey-profile .qualification-kind {
+    display: none;
+  }
+}

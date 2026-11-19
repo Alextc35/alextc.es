@@ -1,0 +1,42 @@
+.tajamar-logo {
+  display: block;
+  width: auto;
+  height: 36px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+.education-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.home-view.mobile-home-view .mobile-study-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.home-view.mobile-home-view .mobile-study-heading .tajamar-logo {
+  height: 72px;
+}
+.home-view.mobile-home-view .mobile-study-heading .view-title {
+  min-width: 0;
+}
+@media (min-width: 601px) and (max-height: 620px) {
+  .education-identity {
+    gap: 9px;
+  }
+  .education-identity .tajamar-logo {
+    height: 30px;
+  }
+}
+@media (max-width: 340px) {
+  .home-view.mobile-home-view .mobile-study-heading {
+    gap: 16px;
+  }
+  .home-view.mobile-home-view .mobile-study-heading .tajamar-logo {
+    height: 60px;
+  }
+}

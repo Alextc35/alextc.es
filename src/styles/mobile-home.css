@@ -1,0 +1,228 @@
+.home-view.mobile-home-view {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: stretch;
+  gap: 8px;
+  padding: 8px 0;
+}
+.home-view.mobile-home-view .mobile-home-page {
+  display: flex;
+  align-items: flex-start;
+  min-height: 0;
+}
+.home-view.mobile-home-view .hero-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(156px, 48vw, 205px);
+  column-gap: 12px;
+  width: 100%;
+  padding: 0;
+  align-items: start;
+}
+.home-view.mobile-home-view .hero-kicker {
+  grid-column: 1 / -1;
+  position: static;
+  max-width: none;
+  margin: 0 0 10px;
+  min-height: 17px;
+  font-size: 9px;
+  line-height: 17px;
+  gap: 8px;
+}
+.home-view.mobile-home-view .small-cross {
+  font-size: 17px;
+}
+.home-view.mobile-home-view .hero-title {
+  grid-column: 1 / -1;
+  font-size: clamp(32px, 9vw, 43px);
+  line-height: 1.05;
+  margin-left: 0;
+  margin-bottom: 18px;
+}
+.home-view.mobile-home-view .mobile-home-summary {
+  grid-column: 1;
+  grid-row: 3;
+  min-width: 0;
+}
+.home-view.mobile-home-view .hero-role {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+.home-view.mobile-home-view .hero-intro {
+  font-size: var(--reading-size);
+  line-height: 1.6;
+  margin-top: 10px;
+  max-width: none;
+}
+.home-view.mobile-home-view .portrait-composition {
+  grid-column: 2;
+  grid-row: 3;
+  position: relative;
+  display: block;
+  left: auto;
+  right: auto;
+  top: auto;
+  width: 100%;
+  height: clamp(180px, 28dvh, 236px);
+  margin: 0;
+  padding: 0 0 14px;
+  transform: none;
+}
+.home-view.mobile-home-view .portrait-frame {
+  border-radius: 45% 45% 1px 1px;
+}
+.home-view.mobile-home-view .portrait-frame img {
+  object-position: 50% 40%;
+}
+.home-view.mobile-home-view .portrait-index,
+.home-view.mobile-home-view .portrait-coordinate,
+.home-view.mobile-home-view .portrait-seal,
+.home-view.mobile-home-view .portrait-caption span:first-child {
+  display: none;
+}
+.home-view.mobile-home-view .portrait-caption {
+  bottom: 0;
+  justify-content: center;
+  font-size: 8px;
+}
+.home-view.mobile-home-view .hero-actions {
+  grid-column: 1 / -1;
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-view.mobile-home-view .hero-actions .button {
+  min-height: 44px;
+  padding: 0 8px;
+  gap: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.home-view.mobile-home-view .hero-socials {
+  display: flex;
+  gap: 8px;
+  margin-left: 0;
+}
+.home-view.mobile-home-view .social-icon {
+  width: 44px;
+  height: 44px;
+}
+.home-view.mobile-home-view .social-icon > svg:first-of-type {
+  width: 22px;
+  height: 22px;
+}
+.home-view.mobile-home-view .mobile-home-pagination .stepper {
+  padding-top: 6px;
+  gap: 8px;
+}
+.home-view.mobile-home-view .mobile-home-pagination .icon-button {
+  width: 30px;
+  height: 30px;
+}
+.home-view.mobile-home-view .mobile-home-study {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.home-view.mobile-home-view .mobile-home-study > .eyebrow {
+  color: var(--color-sage);
+  margin-bottom: 10px;
+  min-height: 17px;
+  font-size: 10px;
+  line-height: 17px;
+}
+.home-view.mobile-home-view .mobile-home-study .mobile-study-heading {
+  align-items: flex-start;
+  flex-direction: row-reverse;
+}
+.home-view.mobile-home-view .mobile-home-study .mobile-study-heading .view-title {
+  flex: 1;
+}
+.home-view.mobile-home-view .mobile-home-study .view-title {
+  font-size: clamp(32px, 9vw, 43px);
+  min-height: 2.1em;
+  line-height: 1.05;
+}
+.home-view.mobile-home-view .mobile-home-study .education-title {
+  font-size: 16px;
+  line-height: 1.55;
+  margin-top: 14px;
+  max-width: none;
+}
+.home-view.mobile-home-view .mobile-study-period {
+  font: 12px/1.65 var(--mono);
+  color: var(--muted);
+  margin-top: 12px;
+}
+.home-view.mobile-home-view .education-description {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 12px;
+  max-width: none;
+}
+.home-view.mobile-home-view .mobile-home-study > .button {
+  margin-top: 18px;
+  font-size: 12px;
+  min-height: 44px;
+  gap: 14px;
+  padding: 0 16px;
+}
+.home-view.mobile-home-view .mobile-home-study > .text-link {
+  margin-top: 8px;
+  font-size: 12px;
+}
+@media (max-height: 650px) {
+  .home-view.mobile-home-view {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    gap: 6px;
+  }
+  .home-view.mobile-home-view .hero-kicker {
+    margin-bottom: 6px;
+    font-size: 9px;
+  }
+  .home-view.mobile-home-view .mobile-home-study > .eyebrow {
+    margin-bottom: 6px;
+  }
+  .home-view.mobile-home-view .hero-title {
+    margin-bottom: 14px;
+  }
+  .home-view.mobile-home-view .hero-actions {
+    margin-top: 12px;
+  }
+}
+@media (max-height: 600px) {
+  .home-view.mobile-home-view .mobile-home-study .education-title {
+    margin-top: 8px;
+  }
+  .home-view.mobile-home-view .education-description {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  .home-view.mobile-home-view .mobile-study-period {
+    margin-top: 8px;
+  }
+  .home-view.mobile-home-view .mobile-home-study > .button {
+    margin-top: 12px;
+  }
+  .home-view.mobile-home-view .mobile-home-study > .text-link {
+    margin-top: 4px;
+  }
+  .home-view.mobile-home-view .hero-copy {
+    grid-template-columns: minmax(0, 1fr) 160px;
+    column-gap: 10px;
+  }
+  .home-view.mobile-home-view .hero-title {
+    font-size: 32px;
+  }
+  .home-view.mobile-home-view .mobile-home-study .view-title {
+    font-size: 32px;
+  }
+  .home-view.mobile-home-view .hero-intro {
+    margin-top: 8px;
+  }
+}
