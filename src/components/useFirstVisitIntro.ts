@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { asset, journey, profile, projects } from '../data/portfolio'
+import { asset, journey, portraitPromoMedia, profile, projects } from '../data/portfolio'
 
 const sessionKey = 'portfolio:intro-seen'
 const motionPreference = '(prefers-reduced-motion: reduce)'
@@ -12,6 +12,18 @@ const imageUrls = [
       entries.flatMap((entry) => (entry.logo ? [asset(entry.logo)] : [])),
     ),
     ...projects.flatMap((project) => project.images.map((image) => asset(image.src))),
+    ...projects.flatMap((project) =>
+      project.promo
+        ? [
+            asset(
+              (window.matchMedia(portraitPromoMedia).matches
+                ? project.promo.portrait
+                : project.promo.landscape
+              ).poster,
+            ),
+          ]
+        : [],
+    ),
   ]),
 ]
 

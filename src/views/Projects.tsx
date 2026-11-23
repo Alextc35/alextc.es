@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Layers2 } from 'lucide-react'
 import { Github } from '../components/BrandIcons'
 import { ExtensionInstall } from '../components/ExtensionInstall'
 import { ZoomableImage } from '../components/ImageViewer'
+import { ProjectVideo } from '../components/ProjectVideo'
 import { asset, projects } from '../data/portfolio'
 import { copy } from '../data/copy'
 import { ExternalLink, IconButton, Stepper, Tabs, ViewHeading } from '../components/Shared'
@@ -19,6 +20,7 @@ export function Projects() {
   const [tab, setTab] = useState('overview')
   const [detailIndex, setDetailIndex] = useState(0)
   const project = projects[projectIndex]
+  const mediaCount = project.images.length + (project.promo ? 1 : 0)
   const imageSurface = useRef<HTMLDivElement>(null)
   const showcasePanel = useRef<HTMLDivElement>(null)
   const detailPage = useRef<HTMLDivElement>(null)
@@ -29,9 +31,9 @@ export function Projects() {
   const moveImage = useCallback(
     (direction: number) => {
       setImageDirection(direction)
-      setImageIndex((index) => (index + direction + project.images.length) % project.images.length)
+      setImageIndex((index) => (index + direction + mediaCount) % mediaCount)
     },
-    [project.images.length],
+    [mediaCount],
   )
   useImageSwipe(imageSurface, moveImage, tab === 'overview')
   usePanelTransition(imageSurface, imageIndex, { direction: imageDirection })
@@ -39,7 +41,8 @@ export function Projects() {
   usePanelTransition(detailPage, detailIndex, { direction: detailDirection.current })
   usePanelTransition(projectPreview, project.id, { direction: projectDirection.current })
   usePanelTransition(projectName, project.id, { direction: projectDirection.current })
-  const currentImage = project.images[imageIndex] ?? project.images[0]
+  const showingPromo = !!project.promo && imageIndex === 0
+  const currentImage = project.images[imageIndex - (project.promo ? 1 : 0)] ?? project.images[0]
   const chooseProject = (index: number) => {
     projectDirection.current = Math.sign(index - projectIndex) || 1
     setProjectIndex(index)
@@ -109,7 +112,7 @@ export function Projects() {
         >
           {tab === 'overview' ? (
             <figure
-              className={`project-figure${project.previewFit === 'contain' ? ' is-card-preview' : ''}`}
+              className={`project-figure${project.previewFit === 'contain' ? ' is-card-preview' : ''}${showingPromo ? ' is-video-preview' : ''}`}
             >
               <div className="browser-bar" aria-hidden="true">
                 <span />
@@ -119,25 +122,29 @@ export function Projects() {
                 <Layers2 size={12} />
               </div>
               <div className="project-image-surface" ref={imageSurface} data-swipe-ignore>
-                <ZoomableImage
-                  key={currentImage.src}
-                  src={asset(currentImage.src)}
-                  alt={currentImage.alt}
-                  width={currentImage.width}
-                  height={currentImage.height}
-                  loading="lazy"
-                  decoding="async"
-                  draggable={false}
-                />
+                {showingPromo && project.promo ? (
+                  <ProjectVideo promo={project.promo} name={project.name} />
+                ) : (
+                  <ZoomableImage
+                    key={currentImage.src}
+                    src={asset(currentImage.src)}
+                    alt={currentImage.alt}
+                    width={currentImage.width}
+                    height={currentImage.height}
+                    loading="lazy"
+                    decoding="async"
+                    draggable={false}
+                  />
+                )}
               </div>
               <figcaption>
-                <span>{currentImage.caption}</span>
+                <span>{showingPromo ? project.promo?.caption : currentImage.caption}</span>
                 <div className="image-controls">
                   <IconButton aria-label={copy.projects.prevImage} onClick={() => moveImage(-1)}>
                     <ArrowLeft size={16} />
                   </IconButton>
                   <span className="image-count" aria-live="polite">
-                    {imageIndex + 1} {copy.all.separator} {project.images.length}
+                    {imageIndex + 1} {copy.all.separator} {mediaCount}
                   </span>
                   <IconButton aria-label={copy.projects.nextImage} onClick={() => moveImage(1)}>
                     <ArrowRight size={16} />

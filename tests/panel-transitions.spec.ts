@@ -316,7 +316,7 @@ test('Journey tabs, project tabs, project detail pages and gallery images share 
   await transition(page, '.project-image-surface', () =>
     page.getByRole('button', { name: 'Siguiente captura', exact: true }).tap(),
   )
-  await expect(page.locator('.image-count')).toHaveText('2 / 2')
+  await expect(page.locator('.image-count')).toHaveText('2 / 3')
   await transition(page, '.showcase-panel', () =>
     page.getByRole('tab', { name: 'En detalle', exact: true }).tap(),
   )

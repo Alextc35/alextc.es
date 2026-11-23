@@ -5,6 +5,9 @@ async function openProjectImage(page: Page) {
   await expect(page.locator('.intro-screen')).toBeHidden()
   if (await page.locator('.compact-view').count()) {
     await page.getByRole('button', { name: 'Siguiente', exact: true }).click()
+    await page.getByRole('button', { name: 'Siguiente', exact: true }).click()
+  } else {
+    await page.getByRole('button', { name: 'Siguiente captura', exact: true }).click()
   }
   const trigger = page.getByRole('button', { name: /^Ampliar captura:/ }).first()
   await expect(trigger).toBeVisible()

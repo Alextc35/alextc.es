@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { ArrowRight, Copy, Check } from 'lucide-react'
 import { Stepper, ExternalLink } from '../components/Shared'
 import { ZoomableImage } from '../components/ImageViewer'
+import { ProjectVideo } from '../components/ProjectVideo'
 import { TajamarLogo } from '../components/TajamarLogo'
 import { CurrentEducationText } from '../components/CurrentEducationText'
 import { ExtensionInstall } from '../components/ExtensionInstall'
@@ -144,6 +145,15 @@ export function CompactView({ view }: { view: Exclude<ViewId, 'journey'> }) {
                     </>
                   ),
                 },
+                ...(item.promo
+                  ? [
+                      {
+                        eyebrow: copy.projects.promo,
+                        title: item.name,
+                        body: <ProjectVideo promo={item.promo} name={item.name} />,
+                      },
+                    ]
+                  : []),
                 ...item.images.map((img) => ({
                   eyebrow: copy.projects.image,
                   title: item.name,

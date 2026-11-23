@@ -186,6 +186,7 @@ test('entry preloads and decodes every section image while preserving direct sec
     '/images/sanchez-angulo-logo.png',
     '/images/newdesktab-workspace.png',
     '/images/newdesktab-folder.png',
+    '/images/newdesktab-promo-poster.jpg',
     '/images/steam-card-hero.svg',
     '/images/steam-card-showcase.svg',
   ]

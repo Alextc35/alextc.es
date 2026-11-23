@@ -22,6 +22,8 @@ Las marcas identifican los centros y empresas de la trayectoria académica y pro
 
 ## New DeskTab
 
+Los vídeos promocionales `public/videos/newdesktab-promo-1080p.mp4` y `public/videos/newdesktab-promo-vertical.mp4`, junto con sus portadas `public/images/newdesktab-promo-poster.jpg` y `public/images/newdesktab-promo-vertical-poster.jpg`, han sido aportados por Alejandro Téllez Corona desde el proyecto New DeskTab.
+
 Las capturas proceden de [Alextc35/newdesktab](https://github.com/Alextc35/newdesktab), revisión `4194bc3d3cbba17c19cbddfaa51daaa89c42eda2`, bajo licencia MIT:
 
 - `public/images/newdesktab-workspace.png`: [captura del escritorio](https://github.com/Alextc35/newdesktab/blob/4194bc3d3cbba17c19cbddfaa51daaa89c42eda2/assets/store/screenshot-1280x800.png).

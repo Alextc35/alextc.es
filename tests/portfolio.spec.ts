@@ -492,7 +492,7 @@ for (const size of [
     const galleryArrows = await page
       .getByRole('button', { name: 'Siguiente captura', exact: true })
       .boundingBox()
-    for (let image = 0; image < 2; image++) {
+    for (let image = 0; image < 3; image++) {
       await page.getByRole('button', { name: 'Siguiente captura', exact: true }).click()
       const next = (await page
         .getByRole('button', { name: 'Siguiente captura', exact: true })

@@ -101,6 +101,16 @@ export const journey: Record<JourneyCategory, JourneyEntry[]> = {
 
 export const currentEducation = journey.education.find((entry) => entry.current)!
 
+export type ProjectPromo = {
+  landscape: { src: string; poster: string; width: number; height: number }
+  portrait: { src: string; poster: string; width: number; height: number }
+  alt: string
+  caption: string
+}
+
+export const portraitPromoMedia =
+  '(max-width: 800px) and (orientation: portrait), (pointer: coarse) and (orientation: portrait)'
+
 type Project = {
   id: string
   name: string
@@ -112,6 +122,7 @@ type Project = {
   technologies: string[]
   features: { title: string; text: string }[]
   images: { src: string; alt: string; caption: string; width: number; height: number }[]
+  promo?: ProjectPromo
   repository: string
   storeUrl: string | null
 }
@@ -127,6 +138,22 @@ export const projects: Project[] = [
     description:
       'Un espacio visual para organizar tus favoritos, darles tu estilo y mantener a mano lo que abres cada día.',
     technologies: ['JavaScript', 'HTML & CSS', 'Manifest V3'],
+    promo: {
+      landscape: {
+        src: 'videos/newdesktab-promo-1080p.mp4',
+        poster: 'images/newdesktab-promo-poster.jpg',
+        width: 1920,
+        height: 1080,
+      },
+      portrait: {
+        src: 'videos/newdesktab-promo-vertical.mp4',
+        poster: 'images/newdesktab-promo-vertical-poster.jpg',
+        width: 1080,
+        height: 1920,
+      },
+      alt: 'Portada del vídeo promocional de New DeskTab con favoritos en un espacio personalizable',
+      caption: 'Descubre New DeskTab en acción.',
+    },
     features: [
       {
         title: 'Organiza a tu manera',
@@ -158,7 +185,8 @@ export const projects: Project[] = [
       },
     ],
     repository: 'https://github.com/Alextc35/newdesktab',
-    storeUrl: null,
+    storeUrl:
+      'https://chromewebstore.google.com/detail/new-desktab/inafkeeciknpocbamagdmdnbbfmpdlmp',
   },
   {
     id: 'steam-card-api',

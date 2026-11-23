@@ -50,9 +50,7 @@ test('both projects remain available and Steam original SVGs, details and links 
       'https://github.com/Alextc35/steam-card-api',
     )
     await expect(page.getByText('Explorar el proyecto', { exact: true })).toHaveCount(0)
-    await expect(page.getByRole('button', { name: 'Instalar extensión', exact: true })).toHaveCount(
-      0,
-    )
+    await expect(page.locator('.project-install')).toHaveCount(0)
     const image = page.locator('.project-image-surface img')
     await image.evaluate((element) => (element as HTMLImageElement).decode())
     await expect(image).toHaveAttribute('src', /steam-card-hero\.svg$/)
@@ -81,17 +79,28 @@ test('both projects remain available and Steam original SVGs, details and links 
       'aria-selected',
       'true',
     )
-    await expect(image).toHaveAttribute('src', /newdesktab-workspace\.png$/)
+    await expect(image).toHaveAttribute('src', /newdesktab-promo-poster\.jpg$/)
+    await expect(
+      page.getByRole('button', { name: 'Ver vídeo promocional de New DeskTab' }),
+    ).toBeVisible()
     const mobile = await page.evaluate(
       () => matchMedia('(max-width: 800px), (pointer: coarse)').matches,
     )
-    const install = page.getByRole('button', { name: 'Instalar extensión', exact: true })
+    const install = page.getByRole('link', { name: /^Instalar extensión/ })
     if (mobile) {
       await expect(install).toHaveCount(0)
       const buttonBounds = (await page.locator('.repo-button').boundingBox())!
       const rowBounds = (await page.locator('.project-links').boundingBox())!
       expect(Math.abs(buttonBounds.width - rowBounds.width)).toBeLessThanOrEqual(1)
-    } else await expect(install).toBeDisabled()
+    } else {
+      await expect(install).toBeVisible()
+      await expect(install).toHaveAttribute(
+        'href',
+        'https://chromewebstore.google.com/detail/new-desktab/inafkeeciknpocbamagdmdnbbfmpdlmp',
+      )
+      await expect(install).toHaveAttribute('target', '_blank')
+      await expect(install).toHaveAttribute('rel', 'noopener noreferrer')
+    }
     await fits(page)
   }
 })
