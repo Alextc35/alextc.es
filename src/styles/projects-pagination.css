@@ -86,6 +86,61 @@
   height: 16px;
   margin-left: 0;
 }
+/* Desktop media shares one bounded frame, including on wide, short screens. */
+.projects-view:not(.is-paged) {
+  grid-template-columns: minmax(0, 0.74fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+.projects-view:not(.is-paged) .project-showcase {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+}
+.projects-view:not(.is-paged) .showcase-panel {
+  height: 100%;
+  min-height: 0;
+}
+.projects-view:not(.is-paged) .project-figure {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100%;
+  min-height: 0;
+}
+.projects-view:not(.is-paged) .project-image-surface {
+  position: relative;
+}
+.projects-view:not(.is-paged) .project-image-surface > button {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+.projects-view:not(.is-paged) .project-figure img {
+  height: 100%;
+  max-height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+@media (max-height: 760px) {
+  .projects-view:not(.is-paged) .project-copy .view-title {
+    font-size: clamp(32px, min(4.6vw, 8dvh), 73px);
+  }
+  .projects-view:not(.is-paged) .project-tagline {
+    font-size: clamp(24px, min(2.6vw, 4.5dvh), 42px);
+  }
+  .projects-view:not(.is-paged) .project-personal {
+    display: none;
+  }
+  .projects-view:not(.is-paged) .project-detail-intro > .tags {
+    margin-bottom: 16px;
+  }
+  .projects-view:not(.is-paged) .feature {
+    margin-top: 12px;
+  }
+  .projects-view:not(.is-paged) .feature p {
+    line-height: 1.5;
+  }
+}
 .projects-view.is-paged {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
